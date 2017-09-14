@@ -29,7 +29,7 @@
   
   **8.	Collation:** SQL_Latin1_General_CP1_CI_AS
  
-## Task 1: Connect to Azure SQL DB
+## Task 2: Connect to Azure SQL DB
 #### 1.	Open SSMS on Azure Data Science VM
 
    ![](/images/AzureDB01_OpenSSMS.png)
