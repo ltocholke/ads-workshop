@@ -42,6 +42,9 @@
   5. **Make sure both checkboxes under the Skip line count option are checked**
   
    ![](/images/Lab3/ADF08_CopyPipelineFileFormat.png)
+   
+   ![](/images/Lab3/ADF08_02CopyPipelineFileFormat.png)
+   
 
 #### 8. Add an Azure Data Lake Storage account as a destination
 
