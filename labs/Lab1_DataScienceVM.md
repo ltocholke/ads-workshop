@@ -56,17 +56,31 @@
 ## Task 3: Setup Data to be uploaded to Azure
 #### 1.	Navigate to the "Data" folder in GitHub
 
+   ![](/images/ADS10_DownloadData.png)
+
 #### 2.	Save the "bicycle_collision_data.csv" file to the following location: C:\ADSWorkshop\Data\
+
+   ![](/images/ADS10_DownloadData1.png)
 
 ## Task 4: Provision Azure Data Services
 #### 1.	Navigate to the "Scripts" folder in GitHub
 
+   ![](/images/ADS11_DownloadPSFile.png)
+
 #### 2.	Download the "AzureDataServicesWorkshop.ps1 file to the desktop of the Data Science VM
+
+   ![](/images/ADS11_DownloadPSFile.png)
 
 #### 3.	Right click on the file and select "Edit"
 
+   ![](/images/ADS12_OpenPSFile.png)
+
 #### 4.	Change the "$SubscriptionName" variable at the top of the script to the name of your Azure subscription
 
+   ![](/images/ADS13_ChangeSubscriptionName.png)
+
 #### 5. Click the green play button at the top of the screen to run the script
+
+   ![](/images/ADS14_RunScript.png)
 
 #### 6. Verify there are no errors and move onto the next lab
