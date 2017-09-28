@@ -69,7 +69,7 @@
 
 #### 2.	Download the "AzureDataServicesWorkshop.ps1 file to the desktop of the Data Science VM
 
-   ![](/images/ADS11_DownloadPSFile.png)
+   ![](/images/ADS11_DownloadPSFile1.png)
 
 #### 3.	Right click on the file and select "Edit"
 
