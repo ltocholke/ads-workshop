@@ -27,7 +27,7 @@
 
 ![](/images/Lab4/ADL07_USQLScript.png)
  
-#### 8.	Rename the script file to 0_Select
+#### 8.	Rename the script file to 0_Select.usql
 #### 9.	Copy and paste the 0_Select.txt script into the query editor and click “Submit”
   * Note: Make sure you have the context set to your Azure Data Lake Analytics account (azuredatalakeanalytics{number})
  
@@ -51,7 +51,7 @@ After the job has completed you should see a screen like the following:
  
  ![](/images/Lab4/ADL12_CreateNewUSQLScript.png)
  
-  2. Name the new script “1_Aggregation” and click Add
+  2. Name the new script “1_Aggregation.usql” and click Add
  
  ![](/images/Lab4/ADL13_NameUSQLScript.png)
  
@@ -80,43 +80,40 @@ After the job has completed you should see a screen like the following:
 ## Task 4: Create Table
 #### 1.	Add a new script file to the project(Task 2 Step 1)
 
-#### 2.	Name the file 3_CreateTable and click “Add”
+#### 2.	Name the file 3_CreateTable.usql and click “Add”
  
 #### 3.	Copy and paste the whole script from the file 3_CreateTable.txt into the newly created script – Read through the script and make sure you understand what it is doing.  If something is not making sense… ask!  When you understand the script, submit the job and wait for it to finish.
  
-After the job has completed you should see a screen like the following:
- 
-#### 4.	Verify the results of the job by navigating to the transformed file that was output
+#### 4.	Verify the results of the job by navigating to the table in Server Explorer
+
+ ![](/images/Lab4/ADL18_CreateTable.png)
  
  ## Task 5: Join Tables
 #### 1.	Add a new script file to the project(Task 2 Step 1)
 
-#### 2.	Name the file 4_Join and click “Add”
+#### 2.	Name the file 4_Join.usql and click “Add”
  
 #### 3.	Copy and paste the whole script from the file 4_Join.txt into the newly created script – Read through the script and make sure you understand what it is doing.  If something is not making sense… ask!  When you understand the script, submit the job and wait for it to finish.
- 
-After the job has completed you should see a screen like the following:
- 
+
 #### 4.	Verify the results of the job by navigating to the transformed file that was output
  
  ## Task 6: Create View
 #### 1.	Add a new script file to the project(Task 2 Step 1)
 
-#### 2.	Name the file 5_CreateView and click “Add”
+#### 2.	Name the file 5_CreateView.usql and click “Add”
  
 #### 3.	Copy and paste the whole script from the file 5_CreateView.txt into the newly created script – Read through the script and make sure you understand what it is doing.  If something is not making sense… ask!  When you understand the script, submit the job and wait for it to finish.
- 
-After the job has completed you should see a screen like the following:
- 
-#### 4.	Verify the results of the job by navigating to the transformed file that was output
+
+#### 4.	Verify the results of the job by navigating to the location in Server Explorer
+
+ ![](/images/Lab4/ADL19_CreateView.png)
  
  ## Task 7: Cognitive Services Text Sentiment
 #### 1.	Add a new script file to the project(Task 2 Step 1)
 
-#### 2.	Name the file 6_CognitiveServices and click “Add”
+#### 2.	Name the file 6_CognitiveServices.usql and click “Add”
  
 #### 3.	Copy and paste the whole script from the file 6_CognitiveServices.txt into the newly created script – Read through the script and make sure you understand what it is doing.  If something is not making sense… ask!  When you understand the script, submit the job and wait for it to finish.
  
-After the job has completed you should see a screen like the following:
- 
 #### 4.	Verify the results of the job by navigating to the transformed file that was output
+     The results will show an object id, a collision code, text for a collision, sentiment of the text column and confidence of the sentiment
