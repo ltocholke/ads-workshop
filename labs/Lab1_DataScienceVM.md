@@ -53,7 +53,7 @@
 
    ![](/images/ADS09_AcceptCert.png)
    
-## Task 3: Setup Data to be uploaded to Azure
+## Task 3: Setup Data to be uploaded to Azure *THE FOLLOWING LABS WILL BE DONE FROM THE DATA SCIENCE VM*
 #### 1.	Navigate to the "Data" folder in GitHub
 
    ![](/images/ADS10_DownloadData.png)
