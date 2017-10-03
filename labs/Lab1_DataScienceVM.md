@@ -29,7 +29,7 @@
   
    **9. Summary:** Click OK
   
-   **10. Buy:** Click Purchase
+   **10. Purchase:** Click Purchase
  	
 ## Task 2: Connect to Azure Data Science VM
 #### 1.	Navigate to your dashboard and then the Azure Data Science VM
