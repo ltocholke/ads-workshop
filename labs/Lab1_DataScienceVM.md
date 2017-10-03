@@ -55,13 +55,13 @@
    
 ## Task 3: Setup Data to be uploaded to Azure 
 #### NOTE **THE FOLLOWING LABS WILL BE DONE FROM THE DATA SCIENCE VM**
-#### 1.	Navigate to the "Data" folder in GitHub
+#### 1.	Download the project from GitHub
 
    ![](/images/ADS10_DownloadData.png)
 
-#### 2.	Save the "bicycle_collision_data.csv" file to the following location: C:\ADSWorkshop\Data\
+#### 2.	Move the "bicycle_collision_data.csv" file to the following location: C:\ADSWorkshop\Data\
 
-   ![](/images/ADS10_DownloadData1.png)
+   ![](/images/ADS11_MoveDataFile.png)
 
 ## Task 4: Provision Azure Data Services
 #### 1.	Navigate to the "Scripts" folder in GitHub
