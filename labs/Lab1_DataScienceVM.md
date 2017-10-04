@@ -64,24 +64,16 @@
    ![](/images/ADS11_MoveDataFile.png)
 
 ## Task 4: Provision Azure Data Services
-#### 1.	Navigate to the "Scripts" folder in GitHub
+#### 1.	Navigate to the "Scripts" folder in the project and edit the "AzureDataServicesWorkshop.ps1" file
 
-   ![](/images/ADS11_DownloadPSFile.png)
+   ![](/images/ADS11_OpenPowerShellFIle.png)
 
-#### 2.	Download the "AzureDataServicesWorkshop.ps1 file to the desktop of the Data Science VM
-
-   ![](/images/ADS11_DownloadPSFile1.png)
-
-#### 3.	Right click on the file and select "Edit"
-
-   ![](/images/ADS12_OpenPSFile.png)
-
-#### 4.	Change the "$SubscriptionName" variable at the top of the script to the name of your Azure subscription
+#### 2.	Change the "$SubscriptionName" variable at the top of the script to the name of your Azure subscription
 
    ![](/images/ADS13_ChangeSubscriptionName.png)
 
-#### 5. Click the green play button at the top of the screen to run the script
+#### 3. Click the green play button at the top of the screen to run the script
 
    ![](/images/ADS14_RunScript.png)
 
-#### 6. Verify there are no errors and move onto the next lab
+#### 4. Verify there are no errors and move onto the next lab
