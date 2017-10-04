@@ -55,7 +55,7 @@
    
 ## Task 3: Setup Data to be uploaded to Azure 
 #### NOTE **THE FOLLOWING LABS WILL BE DONE FROM THE DATA SCIENCE VM**
-#### 1.	Download the project from GitHub
+#### 1.	Download the project from GitHub and unzip it on the Azure Data Science VM
 
    ![](/images/ADS10_DownloadData.png)
 
