@@ -77,3 +77,14 @@
    ![](/screenshots/Lab1/ADS14_RunScript.png)
 
 #### 4. Verify there are no errors and move onto the next lab
+
+## Task 5: Install USQL Extensions for Data Lake Analytics
+#### 1.	Navigate to your Azure Data Lake Analytics Service in the portal
+
+	![](/screenshots/Lab1/ADS15_NavigatetoADLA.png)
+
+#### 2.	Install USQL Extensions for Data Lake Analytics
+
+	![](/screenshots/Lab1/ADS16_InstallExtensions.png)
+
+
