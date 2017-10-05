@@ -117,7 +117,7 @@ if Text.Contains([ProductCategoryName], "Bikes") then "Bikes" else "Non-Bike"
  
 ## Task 3: Create Report from data that looks like the following
 #### 1.	Add an image
-  1. Select the logo from the following location: C:\ADSWorkshop\screenshots
+  1. Select the logo from the "images" directory of the ZIP file from GitHub
   
   ![](/screenshots/Lab6/PBI27_AddReportImage.png)
  
