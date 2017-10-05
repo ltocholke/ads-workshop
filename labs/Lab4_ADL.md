@@ -27,8 +27,8 @@
 
 ![](/images/Lab4/ADL07_USQLScript.png)
  
-#### 8.	Rename the script file to Task1_QueryData
-#### 9.	Copy and paste the Task1_QueryData script into the query editor and click “Submit”
+#### 8.	Rename the script file to 0_Select.usql
+#### 9.	Copy and paste the 0_Select.txt script into the query editor and click “Submit”
   * Note: Make sure you have the context set to your Azure Data Lake Analytics account (azuredatalakeanalytics{number})
  
  ![](/images/Lab4/ADL08_SubmitUSQLJob.png)
@@ -45,21 +45,21 @@ After the job has completed you should see a screen like the following:
  
  ![](/images/Lab4/ADL11_USQLJobOutput2.png)
  
-## Task 2: Create script to transform the data
+ ## Task 2: Create script to aggregate the data
 #### 1.	Create new script in Visual Studio
   1. Right click on the project name and Add a new item
  
  ![](/images/Lab4/ADL12_CreateNewUSQLScript.png)
  
-  2. Name the new script “Task2_Transform” and click Add
+  2. Name the new script “1_Aggregation.usql” and click Add
  
  ![](/images/Lab4/ADL13_NameUSQLScript.png)
  
-#### 2.	Copy and paste the whole script from the file Task2_Transform.txt into the newly created script – Read through the script and make sure you understand what it is doing.  If something is not making sense… ask!  When you understand the script, submit the job and wait for it to finish.
+#### 2.	Copy and paste the whole script from the file 1_Aggregation.txt into the newly created script – Read through the script and make sure you understand what it is doing.  If something is not making sense… ask!  When you understand the script, submit the job and wait for it to finish.
 
 ![](/images/Lab4/ADL14_SubmitUSQLTranformScript.png)
  
-#### 3.	Once the job has finished, navigate to the “Transformed” directory and open the CustomerProductSale.csv file to see the results.
+#### 3.	Once the job has finished, navigate to the “Transformed” directory and open the 1_AggregationOutput file to see the results.
  
  ![](/images/Lab4/ADL15_VerifyUSQLJob.png)
  
@@ -67,25 +67,53 @@ After the job has completed you should see a screen like the following:
  
  ![](/images/Lab4/ADL17_VerifyUSQLJobOutput2.png)
  
-## Task 3: Transform the bicycle_collision.csv file to have a common key to join on.
+## Task 3: Create script to transform the data
+#### 1.	Create new script in Visual Studio
+  1. Right click on the project name and Add a new item
+ 
+  2. Name the new script “2_Transform” and click Add
+ 
+#### 2.	Copy and paste the whole script from the file Task2_Transform.txt into the newly created script – Read through the script and make sure you understand what it is doing.  If something is not making sense… ask!  When you understand the script, submit the job and wait for it to finish.
+ 
+#### 3.	Once the job has finished, navigate to the “Transformed” directory and open the BikeCollisionData.txt file to see the results.
+ 
+## Task 4: Create Table
 #### 1.	Add a new script file to the project(Task 2 Step 1)
 
-#### 2.	Name the file Task3_BikeCollisionTransform.usql and click “Add”
-
-![](/images/Lab4/ADL18_NameUSQLScript.png)
+#### 2.	Name the file 3_CreateTable.usql and click “Add”
  
-#### 3.	Copy and paste the whole script from the file Task3_BikeCollision_Trasform.txt into the newly created script – Read through the script and make sure you understand what it is doing.  If something is not making sense… ask!  When you understand the script, submit the job and wait for it to finish.
-
-![](/images/Lab4/ADL19_SubmitUSQLTransformScript2.png)
+#### 3.	Copy and paste the whole script from the file 3_CreateTable.txt into the newly created script – Read through the script and make sure you understand what it is doing.  If something is not making sense… ask!  When you understand the script, submit the job and wait for it to finish.
  
-After the job has completed you should see a screen like the following:
+#### 4.	Verify the results of the job by navigating to the table in Server Explorer
 
-![](/images/Lab4/ADL20_USQLTransformJobResult.png)
+ ![](/images/Lab4/ADL18_VerifyTable.png)
  
+ ## Task 5: Join Tables
+#### 1.	Add a new script file to the project(Task 2 Step 1)
+
+#### 2.	Name the file 4_Join.usql and click “Add”
+ 
+#### 3.	Copy and paste the whole script from the file 4_Join.txt into the newly created script – Read through the script and make sure you understand what it is doing.  If something is not making sense… ask!  When you understand the script, submit the job and wait for it to finish.
+
 #### 4.	Verify the results of the job by navigating to the transformed file that was output
  
- ![](/images/Lab4/ADL21_NavigateDataExplorer.png)
+ ## Task 6: Create View
+#### 1.	Add a new script file to the project(Task 2 Step 1)
+
+#### 2.	Name the file 5_CreateView.usql and click “Add”
  
- ![](/images/Lab4/ADL22_VerifyUSQLTransformJob.png)
+#### 3.	Copy and paste the whole script from the file 5_CreateView.txt into the newly created script – Read through the script and make sure you understand what it is doing.  If something is not making sense… ask!  When you understand the script, submit the job and wait for it to finish.
+
+#### 4.	Verify the results of the job by navigating to the location in Server Explorer
+
+ ![](/images/Lab4/ADL19_VerifyView.png)
  
- ![](/images/Lab4/ADL23_VerifyUSQLTransformJobOutput.png)
+ ## Task 7: Cognitive Services Text Sentiment
+#### 1.	Add a new script file to the project(Task 2 Step 1)
+
+#### 2.	Name the file 6_CognitiveServices.usql and click “Add”
+ 
+#### 3.	Copy and paste the whole script from the file 6_CognitiveServices.txt into the newly created script – Read through the script and make sure you understand what it is doing.  If something is not making sense… ask!  When you understand the script, submit the job and wait for it to finish.
+ 
+#### 4.	Verify the results of the job by navigating to the transformed file that was output
+The results will show an object id, a collision code, text for a collision, sentiment of the text column and confidence of the sentiment

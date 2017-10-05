@@ -1,0 +1,68 @@
+DROP VIEW IF EXISTS SalesOrderDetailView;
+
+DECLARE @output = "/Transformed/AWSQLDB/5_CreateViewOutput.txt";
+
+CREATE VIEW SalesOrderDetailView AS  
+EXTRACT SalesOrderID			int,
+        SalesOrderDetailID		int,
+        OrderQty				int,
+        ProductID				int,
+        UnitPrice				decimal,
+        UnitPriceDiscount		decimal,
+        LineTotal				decimal,
+        rowguid		            Guid,
+        ModifiedDate		    DateTime
+FROM "/Raw/AWSQLDB/SalesOrderDetail.txt"
+USING Extractors.Text(delimiter: '|', skipFirstNRows: 1);
+
+DROP VIEW IF EXISTS ProductView;
+
+CREATE VIEW ProductView AS  
+EXTRACT ProductID				    int,
+        Name            			string,
+        ProductNumber       		string,
+        Color               		string,
+        StandardCost        	    decimal,
+        ListPrice       			decimal,
+        Size            	        string,
+        Weight          			decimal?,
+        ProductCategoryID		    int?,
+        ProductModelID  			int?,
+        SellStartDate		        DateTime,
+        SellEndDate     			DateTime?,
+        DiscontinuedDate		    DateTime?,
+        ThumbNailPhotoFileName		string,
+        rowguid		                Guid,
+        ModifiedDate                DateTime
+FROM "/Raw/AWSQLDB/Product.txt"
+USING Extractors.Text(delimiter: '|', skipFirstNRows: 1, nullEscape: "\\N");
+
+DROP VIEW IF EXISTS ProductCategoryView;
+
+CREATE VIEW ProductCategoryView AS  
+EXTRACT ProductCategoryID                   int?,
+        ParentProductCategoryID             int?,
+        Name                                string,
+        rowguid                             Guid,
+        ModifiedDate                        DateTime
+FROM "/Raw/AWSQLDB/ProductCategory.txt"
+USING Extractors.Text(delimiter: '|', skipFirstNRows: 1);
+
+@res =
+SELECT p.Name AS ProductName,
+       p.StandardCost,
+       pc.Name AS ProductCategoryName,
+       sod.UnitPrice,
+       sod.LineTotal
+FROM SalesOrderDetailView AS sod
+     INNER JOIN
+         ProductView AS p
+     ON sod.ProductID == p.ProductID
+     INNER JOIN
+         ProductCategoryView AS pc
+     ON p.ProductCategoryID == pc.ProductCategoryID
+GROUP BY p.Name, p.StandardCost, pc.Name, sod.UnitPrice, sod.LineTotal;
+
+OUTPUT @res
+TO @output
+USING Outputters.Text(delimiter : '|', outputHeader : true);

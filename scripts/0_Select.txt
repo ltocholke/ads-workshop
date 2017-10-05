@@ -1,0 +1,32 @@
+DECLARE @inProduct = "/Raw/AWSQLDB/Product.txt";
+DECLARE @outProduct = "/Transformed/AWSQLDB/0_SelectOutput.txt";
+
+@Product =
+EXTRACT ProductID				    int,
+        Name            			string,
+        ProductNumber       		string,
+        Color               		string,
+        StandardCost        	    decimal,
+        ListPrice       			decimal,
+        Size            	        string,
+        Weight          			decimal?,
+        ProductCategoryID		    int?,
+        ProductModelID  			int?,
+        SellStartDate		        DateTime,
+        SellEndDate     			DateTime?,
+        DiscontinuedDate		    DateTime?,
+        ThumbNailPhotoFileName		string,
+        rowguid		                Guid,
+        ModifiedDate                DateTime
+FROM @inProduct
+USING Extractors.Text(delimiter: '|', skipFirstNRows: 1, nullEscape: "\\N");
+
+@res =
+SELECT *
+FROM @Product;
+
+OUTPUT @res
+TO @outProduct
+USING Outputters.Text(delimiter : '|', outputHeader : true);
+
+

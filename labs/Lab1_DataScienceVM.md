@@ -29,7 +29,7 @@
   
    **9. Summary:** Click OK
   
-   **10. Buy:** Click Purchase
+   **10. Purchase:** Click Purchase
  	
 ## Task 2: Connect to Azure Data Science VM
 #### 1.	Navigate to your dashboard and then the Azure Data Science VM
@@ -52,3 +52,28 @@
 #### 5.Accept the security certificate
 
    ![](/images/ADS09_AcceptCert.png)
+   
+## Task 3: Setup Data to be uploaded to Azure 
+#### NOTE **THE FOLLOWING LABS WILL BE DONE FROM THE DATA SCIENCE VM**
+#### 1.	Download the project from GitHub and unzip it on the Azure Data Science VM
+
+   ![](/images/ADS10_DownloadData.png)
+
+#### 2.	Move the "bicycle_collision_data.csv" file to the following location: C:\ADSWorkshop\Data\
+
+   ![](/images/ADS11_MoveDataFile.png)
+
+## Task 4: Provision Azure Data Services
+#### 1.	Navigate to the "Scripts" folder in the project and edit the "AzureDataServicesWorkshop.ps1" file
+
+   ![](/images/ADS11_OpenPowerShellFIle.png)
+
+#### 2.	Change the "$SubscriptionName" variable at the top of the script to the name of your Azure subscription
+
+   ![](/images/ADS13_ChangeSubscriptionName.png)
+
+#### 3. Click the green play button at the top of the screen to run the script
+
+   ![](/images/ADS14_RunScript.png)
+
+#### 4. Verify there are no errors and move onto the next lab

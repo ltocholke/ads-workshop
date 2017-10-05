@@ -1,0 +1,24 @@
+DECLARE @inSalesOrderDetail = "/Raw/AWSQLDB/SalesOrderDetail.txt";
+DECLARE @out = "/Transformed/AWSQLDB/1_AggregationOutput.txt";
+
+@salesOrderDetail =
+EXTRACT SalesOrderID			int,
+        SalesOrderDetailID		int,
+        OrderQty				int,
+        ProductID				int,
+        UnitPrice				decimal,
+        UnitPriceDiscount		decimal,
+        LineTotal				decimal,
+        rowguid		            Guid,
+        ModifiedDate		    DateTime
+FROM @inSalesOrderDetail
+USING Extractors.Text(delimiter: '|', skipFirstNRows: 1);
+
+@res =
+SELECT SalesOrderID, SUM(LineTotal) AS LineTotal
+FROM @salesOrderDetail
+GROUP BY SalesOrderID;
+
+OUTPUT @res
+TO @out
+USING Outputters.Text(delimiter : '|', outputHeader : true);

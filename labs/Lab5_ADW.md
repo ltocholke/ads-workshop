@@ -15,6 +15,8 @@
  
  ![](/images/Lab5/ADW01_2_ProvisionADWSettings.png)
  
+ ![](/images/Lab5/ADW01_3_ProvisionADWSettings.png)
+ 
 ## Task 2: Create Tables in Azure Data Warehouse
 #### 1.	If you are not already logged into your Azure SQL DB Server, follow Task 1 of Lab 1.
 #### 2.	Expand the tables node on the DB adsDW.  Note that it is on the same server as the Azure SQL DB, it is just shown as another DB.

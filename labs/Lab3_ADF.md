@@ -42,6 +42,9 @@
   5. **Make sure both checkboxes under the Skip line count option are checked**
   
    ![](/images/Lab3/ADF08_CopyPipelineFileFormat.png)
+   
+   ![](/images/Lab3/ADF08_02CopyPipelineFileFormat.png)
+   
 
 #### 8. Add an Azure Data Lake Storage account as a destination
 
@@ -112,12 +115,12 @@
  
 #### 3.	Configure Azure SQL DB connection properties and click Next.
   1. **Connection Name:** ADSWorkshop-AzureSQLDBConnection
-  2. Server/database selection method:** From Azure subscription
-  3. Azure subscription:** 
-  4. Server Name:** adswkshp-sqlserver<random number>
-  5. Database Name:** adsAppDB
-  6. User Name:** sqladmin
-  7. Password:** P@ssw0rd01
+  2. **Server/database selection method:** From Azure subscription
+  3. **Azure subscription:** 
+  4. **Server Name:** adswkshp-sqlserver<random number>
+  5. **Database Name:** adsAppDB
+  6. **User Name:** sqladmin
+  7. **Password:** P@ssw0rd01
    
 ![](/images/Lab3/ADF21_CopyPipelineSQLDBConnection.png)
  
