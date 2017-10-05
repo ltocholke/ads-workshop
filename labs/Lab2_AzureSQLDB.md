@@ -32,27 +32,27 @@
 ## Task 2: Connect to Azure SQL DB
 #### 1.	Open SSMS on Azure Data Science VM
 
-   ![](/images/AzureDB01_OpenSSMS.png)
+   ![](/screenshots/Lab2/AzureDB01_OpenSSMS.png)
    
 #### 2.	Find the name of the server for your Azure SQL DB
 
-   ![](/images/AzureDB02_ServerName.png)
+   ![](/screenshots/Lab2/AzureDB02_ServerName.png)
    
 #### 3.	Paste the server name into the Server Name input box and enter the Login and Password for the Azure SQL DB
 
-   ![](/images/AzureDB03_SSMSConnect.png)
+   ![](/screenshots/Lab2/AzureDB03_SSMSConnect.png)
    
 #### 4.	Expand out the Database node and Tables node
 
-   ![](/images/AzureDB04_ObjectExplorer.png)
+   ![](/screenshots/Lab2/AzureDB04_ObjectExplorer.png)
    
 #### 5.	Click “New Query”
 
-   ![](/images/AzureDB05_NewQuery.png)
+   ![](/screenshots/Lab2/AzureDB05_NewQuery.png)
    
 #### 6.	Switch the context from master to the adsAppDB
 
-   ![](/images/AzureDB06_SwitchContext.png)
+   ![](/screenshots/Lab2/AzureDB06_SwitchContext.png)
    
 #### 7.	Paste or type in the following queries
 ```SQL
@@ -62,5 +62,5 @@ Select * from [SalesLT].[ProductCategory] p inner join [SalesLT].[ProductCategor
 ```
 #### 8.	Take a look at live query statistics 
 
-   ![](/images/AzureDB07_LiveQuery.png)
+   ![](/screenshots/Lab2/AzureDB07_LiveQuery.png)
    
