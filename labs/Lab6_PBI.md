@@ -83,6 +83,10 @@
  
 #### 4.	Add a custom column with the following statement and click “OK”
 
+```SQL
+if Text.Contains(([ProductCategoryName], "Bikes") then "Bikes" else "Non-Bike"
+```
+
 ![](/screenshots/Lab6/PBI19_AddCustomColumn3.png)
  
 #### 5.	There should be a custom column added to the end of the dataset

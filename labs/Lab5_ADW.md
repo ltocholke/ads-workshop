@@ -27,7 +27,7 @@
 
 ![](/screenshots/Lab5/ADW02_NewQuery.png)
  
-#### 4.	Paste the script from the file ADSWorkshop_CreateTables.txt into the query window and execute the query.
+#### 4.	Paste the script from the file ADWCreateTables.sql into the query window and execute the query.
 
 ![](/screenshots/Lab5/ADW03_QueryPaste.png)
  
@@ -58,7 +58,7 @@
 
 ![](/screenshots/Lab5/ADW08_SourceConnProperties.png)
  
-#### 6.	Navigate to the “Transformed” directory and select the CustomerProductSale.csv file and click “Next”
+#### 6.	Navigate to the “Transformed” directory and select the CustomerProductSale.txt file and click “Next”
 
 ![](/screenshots/Lab5/ADW09_ChooseSourceInputFile.png)
  
