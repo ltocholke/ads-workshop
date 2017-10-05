@@ -1,0 +1,1239 @@
+{
+    "name": "Copy-AzureSQLDB2ADLS",
+    "properties": {
+        "description": "Copy data from Azure SQL DB to Azure Data Lake Storage",
+        "activities": [
+            {
+                "type": "Copy",
+                "typeProperties": {
+                    "source" : {
+                        "type": "SqlSource",
+                        "sqlReaderQuery" : "select [ProductID],[Name],[ProductNumber],[Color],[StandardCost],[ListPrice],[Size],[Weight],[ProductCategoryID],[ProductModelID],[SellStartDate],[SellEndDate],[DiscontinuedDate],[ThumbnailPhotoFileName],[rowguid],[ModifiedDate] from [SalesLT].[Product]"
+                        },
+                        "sink": {
+                            "type" : "AzureDataLakeStoreSink",
+                            "writeBatchSize" : 0,
+                            "writeBatchTimeout" : "00:00:00"
+                    }
+                },
+                
+                "inputs": [
+                    {
+                        "name": "InputDatasets-product"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "OutputDatasets-product"
+                    }
+                ],
+                "policy": {
+                   "timeout": "1.00:00:00",
+                    "concurrency": 1,
+                    "executionPriorityOrder": "NewestFirst",
+                    "style": "StartOfInterval",
+                    "retry": 3,
+                    "longRetry": 0,
+                    "longRetryInterval": "00:00:00"
+                },
+                "scheduler": {
+                    "frequency": "Day",
+                    "interval": 1                
+                    },
+                    "name": "Activity-6-[SalesLT]_Product]->[SalesLT]_[Product]_txt"
+            },
+            {
+                "type": "Copy",
+                "typeProperties": {
+                    "source": {
+                        "type": "SqlSource",
+                        "sqlReaderQuery": "select * from [SalesLT].[Address]"
+                    },
+                    "sink": {
+                        "type": "AzureDataLakeStoreSink",
+                        "writeBatchSize": 0,
+                        "writeBatchTimeout": "00:00:00"
+                    }
+                },
+                "inputs": [
+                    {
+                        "name": "InputDatasets-jez-[SalesLT]-[Address]"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "OutputDatasets-jez-[SalesLT]-[Address]"
+                    }
+                ],
+                "policy": {
+                    "timeout": "1.00:00:00",
+                    "concurrency": 1,
+                    "executionPriorityOrder": "NewestFirst",
+                    "style": "StartOfInterval",
+                    "retry": 3,
+                    "longRetry": 0,
+                    "longRetryInterval": "00:00:00"
+                },
+                "scheduler": {
+                    "frequency": "Day",
+                    "interval": 1
+                },
+                "name": "Activity-0-[SalesLT]_[Address]->[SalesLT]_[Address]_txt"
+            },
+            {
+                "type": "Copy",
+                "typeProperties": {
+                    "source": {
+                        "type": "SqlSource",
+                        "sqlReaderQuery": "select * from [SalesLT].[Customer]"
+                    },
+                    "sink": {
+                        "type": "AzureDataLakeStoreSink",
+                        "writeBatchSize": 0,
+                        "writeBatchTimeout": "00:00:00"
+                    }
+                },
+                "inputs": [
+                    {
+                        "name": "InputDatasets-jez-[SalesLT]-[Customer]"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "OutputDatasets-jez-[SalesLT]-[Customer]"
+                    }
+                ],
+                "policy": {
+                    "timeout": "1.00:00:00",
+                    "concurrency": 1,
+                    "executionPriorityOrder": "NewestFirst",
+                    "style": "StartOfInterval",
+                    "retry": 3,
+                    "longRetry": 0,
+                    "longRetryInterval": "00:00:00"
+                },
+                "scheduler": {
+                    "frequency": "Day",
+                    "interval": 1
+                },
+                "name": "Activity-1-[SalesLT]_[Customer]->[SalesLT]_[Customer]_txt"
+            },
+            {
+                "type": "Copy",
+                "typeProperties": {
+                    "source": {
+                        "type": "SqlSource",
+                        "sqlReaderQuery": "select * from [SalesLT].[CustomerAddress]"
+                    },
+                    "sink": {
+                        "type": "AzureDataLakeStoreSink",
+                        "writeBatchSize": 0,
+                        "writeBatchTimeout": "00:00:00"
+                    }
+                },
+                "inputs": [
+                    {
+                        "name": "InputDatasets-jez-[SalesLT]-[CustomerAddress]"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "OutputDatasets-jez-[SalesLT]-[CustomerAddress]"
+                    }
+                ],
+                "policy": {
+                    "timeout": "1.00:00:00",
+                    "concurrency": 1,
+                    "executionPriorityOrder": "NewestFirst",
+                    "style": "StartOfInterval",
+                    "retry": 3,
+                    "longRetry": 0,
+                    "longRetryInterval": "00:00:00"
+                },
+                "scheduler": {
+                    "frequency": "Day",
+                    "interval": 1
+                },
+                "name": "Activity-2-[SalesLT]_[CustomerAddress]->[SalesLT]_[CustomerAddress]_txt"
+            },
+            {
+                "type": "Copy",
+                "typeProperties": {
+                    "source": {
+                        "type": "SqlSource",
+                        "sqlReaderQuery": "select * from [SalesLT].[ProductCategory]"
+                    },
+                    "sink": {
+                        "type": "AzureDataLakeStoreSink",
+                        "writeBatchSize": 0,
+                        "writeBatchTimeout": "00:00:00"
+                    }
+                },
+                "inputs": [
+                    {
+                        "name": "InputDatasets-jez-[SalesLT]-[ProductCategory]"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "OutputDatasets-jez-[SalesLT]-[ProductCategory]"
+                    }
+                ],
+                "policy": {
+                    "timeout": "1.00:00:00",
+                    "concurrency": 1,
+                    "executionPriorityOrder": "NewestFirst",
+                    "style": "StartOfInterval",
+                    "retry": 3,
+                    "longRetry": 0,
+                    "longRetryInterval": "00:00:00"
+                },
+                "scheduler": {
+                    "frequency": "Day",
+                    "interval": 1
+                },
+                "name": "Activity-3-[SalesLT]_[ProductCategory]->[SalesLT]_[ProductCategory]_txt"
+            },
+            {
+                "type": "Copy",
+                "typeProperties": {
+                    "source": {
+                        "type": "SqlSource",
+                        "sqlReaderQuery": "select * from [SalesLT].[SalesOrderDetail]"
+                    },
+                    "sink": {
+                        "type": "AzureDataLakeStoreSink",
+                        "writeBatchSize": 0,
+                        "writeBatchTimeout": "00:00:00"
+                    }
+                },
+                "inputs": [
+                    {
+                        "name": "InputDatasets-jez-[SalesLT]-[SalesOrderDetail]"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "OutputDatasets-jez-[SalesLT]-[SalesOrderDetail]"
+                    }
+                ],
+                "policy": {
+                    "timeout": "1.00:00:00",
+                    "concurrency": 1,
+                    "executionPriorityOrder": "NewestFirst",
+                    "style": "StartOfInterval",
+                    "retry": 3,
+                    "longRetry": 0,
+                    "longRetryInterval": "00:00:00"
+                },
+                "scheduler": {
+                    "frequency": "Day",
+                    "interval": 1
+                },
+                "name": "Activity-4-[SalesLT]_[SalesOrderDetail]->[SalesLT]_[SalesOrderDetail]_txt"
+            },
+            {
+                "type": "Copy",
+                "typeProperties": {
+                    "source": {
+                        "type": "SqlSource",
+                        "sqlReaderQuery": "select * from [SalesLT].[SalesOrderHeader]"
+                    },
+                    "sink": {
+                        "type": "AzureDataLakeStoreSink",
+                        "writeBatchSize": 0,
+                        "writeBatchTimeout": "00:00:00"
+                    }
+                },
+                "inputs": [
+                    {
+                        "name": "InputDatasets-jez-[SalesLT]-[SalesOrderHeader]"
+                    }
+                ],
+                "outputs": [
+                    {
+                        "name": "OutputDatasets-jez-[SalesLT]-[SalesOrderHeader]"
+                    }
+                ],
+                "policy": {
+                    "timeout": "1.00:00:00",
+                    "concurrency": 1,
+                    "executionPriorityOrder": "NewestFirst",
+                    "style": "StartOfInterval",
+                    "retry": 3,
+                    "longRetry": 0,
+                    "longRetryInterval": "00:00:00"
+                },
+                "scheduler": {
+                    "frequency": "Day",
+                    "interval": 1
+                },
+                "name": "Activity-5-[SalesLT]_[SalesOrderHeader]->[SalesLT]_[SalesOrderHeader]_txt"
+            }
+        ],
+        "start": "2017-05-15T03:08:00.289Z",
+        "end": "2017-05-15T03:08:00.289Z",
+        "isPaused": false,
+        "hubName": "adswkshpadf_hub",
+        "pipelineMode": "OneTime",
+        "expirationTime": "3.00:00:00",
+        "datasets": [
+			{
+                "name": "InputDatasets-product",
+                "properties": {
+                    "structure": [
+                        {
+                            "name": "ProductID",
+                            "type": "Int32"
+                        },
+                        {
+                            "name": "Name",
+                            "type": "String"
+                        },
+                        {
+                            "name": "ProductNumber",
+                            "type": "String"
+                        },
+                        {
+                            "name": "Color",
+                            "type": "String"
+                        },
+                        {
+                            "name": "StandardCost",
+                            "type": "Decimal"
+                        },
+                        {
+                            "name": "ListPrice",
+                            "type": "Decimal"
+                        },
+                        {
+                            "name": "Size",
+                            "type": "String"
+                        },
+                        {
+                            "name": "Weight",
+                            "type": "Decimal"
+                        },
+                        {
+                            "name": "ProductCategoryID",
+                            "type": "Int32"
+                        },
+                        {
+                            "name": "ProductModelID",
+                            "type": "Int32"
+                        },
+                        {
+                            "name": "SellStartDate",
+                            "type": "Datetime"
+                        },
+                        {
+                            "name": "SellEndDate",
+                            "type": "Datetime"
+                        },
+                        {
+                            "name": "DiscontinuedDate",
+                            "type": "Datetime"
+                        },
+                        {
+                            "name": "ThumbNailFileName",
+                            "type": "String"
+                        },
+                        {
+                            "name": "rowguid",
+                            "type": "Guid"
+                        },
+                        {
+                            "name": "ModifiedDate",
+                            "type": "Datetime"
+                        }
+                    ],
+                    "published": false,
+                    "type": "AzureSqlTable",
+                    "linkedServiceName": "ADSWorkshop-AzureSQLDBConnection",
+                    "typeProperties": {
+                        "tableName": "[SalesLT].[Product]"
+                    },
+                    "availability": {
+                        "frequency": "Day",
+                        "interval": 1
+                    },
+                    "external": true,
+                    "policy": {}
+                }
+            },
+			{
+                "name": "OutputDatasets-product",
+                "properties": {
+                    "structure": [
+                        {
+                            "name": "ProductID",
+                            "type": "Int32"
+                        },
+                        {
+                            "name": "Name",
+                            "type": "String"
+                        },
+                        {
+                            "name": "ProductNumber",
+                            "type": "String"
+                        },
+                        {
+                            "name": "Color",
+                            "type": "String"
+                        },
+                        {
+                            "name": "StandardCost",
+                            "type": "Decimal"
+                        },
+                        {
+                            "name": "ListPrice",
+                            "type": "Decimal"
+                        },
+                        {
+                            "name": "Size",
+                            "type": "String"
+                        },
+                        {
+                            "name": "Weight",
+                            "type": "Decimal"
+                        },
+                        {
+                            "name": "ProductCategoryID",
+                            "type": "Int32"
+                        },
+                        {
+                            "name": "ProductModelID",
+                            "type": "Int32"
+                        },
+                        {
+                            "name": "SellStartDate",
+                            "type": "Datetime"
+                        },
+                        {
+                            "name": "SellEndDate",
+                            "type": "Datetime"
+                        },
+                        {
+                            "name": "DiscontinuedDate",
+                            "type": "Datetime"
+                        },
+                        {
+                            "name": "ThumbNailFileName",
+                            "type": "String"
+                        },
+                        {
+                            "name": "rowguid",
+                            "type": "Guid"
+                        },
+                        {
+                            "name": "ModifiedDate",
+                            "type": "Datetime"
+                        }
+                    ],
+                    "published": false,
+                    "type": "AzureDataLakeStore",
+                    "linkedServiceName": "ADSWorkshop-AzureDataLakeStoreConnection",
+                    "typeProperties": {
+                        "fileName": "Product.txt",
+                        "folderPath": "Raw/AWSQLDB",
+                        "format": {
+                            "type": "TextFormat",
+                            "columnDelimiter": "|",
+                            "firstRowAsHeader": true
+                        }
+                    },
+                    "availability": {
+                        "frequency": "Day",
+                        "interval": 1
+                    },
+                    "external": false,
+                    "policy": {}
+                }
+            },
+            {
+                "name": "InputDatasets-jez-[SalesLT]-[Address]",
+                "properties": {
+                    "structure": [
+                        {
+                            "name": "AddressID",
+                            "type": "Int32"
+                        },
+                        {
+                            "name": "AddressLine1",
+                            "type": "String"
+                        },
+                        {
+                            "name": "AddressLine2",
+                            "type": "String"
+                        },
+                        {
+                            "name": "City",
+                            "type": "String"
+                        },
+                        {
+                            "name": "StateProvince",
+                            "type": "String"
+                        },
+                        {
+                            "name": "CountryRegion",
+                            "type": "String"
+                        },
+                        {
+                            "name": "PostalCode",
+                            "type": "String"
+                        },
+                        {
+                            "name": "rowguid",
+                            "type": "Guid"
+                        },
+                        {
+                            "name": "ModifiedDate",
+                            "type": "Datetime"
+                        }
+                    ],
+                    "published": false,
+                    "type": "AzureSqlTable",
+                    "linkedServiceName": "ADSWorkshop-AzureSQLDBConnection",
+                    "typeProperties": {
+                        "tableName": "[SalesLT].[Address]"
+                    },
+                    "availability": {
+                        "frequency": "Day",
+                        "interval": 1
+                    },
+                    "external": true,
+                    "policy": {}
+                }
+            },
+            {
+                "name": "InputDatasets-jez-[SalesLT]-[Customer]",
+                "properties": {
+                    "structure": [
+                        {
+                            "name": "CustomerID",
+                            "type": "Int32"
+                        },
+                        {
+                            "name": "NameStyle",
+                            "type": "Boolean"
+                        },
+                        {
+                            "name": "Title",
+                            "type": "String"
+                        },
+                        {
+                            "name": "FirstName",
+                            "type": "String"
+                        },
+                        {
+                            "name": "MiddleName",
+                            "type": "String"
+                        },
+                        {
+                            "name": "LastName",
+                            "type": "String"
+                        },
+                        {
+                            "name": "Suffix",
+                            "type": "String"
+                        },
+                        {
+                            "name": "CompanyName",
+                            "type": "String"
+                        },
+                        {
+                            "name": "SalesPerson",
+                            "type": "String"
+                        },
+                        {
+                            "name": "EmailAddress",
+                            "type": "String"
+                        },
+                        {
+                            "name": "Phone",
+                            "type": "String"
+                        },
+                        {
+                            "name": "PasswordHash",
+                            "type": "String"
+                        },
+                        {
+                            "name": "PasswordSalt",
+                            "type": "String"
+                        },
+                        {
+                            "name": "rowguid",
+                            "type": "Guid"
+                        },
+                        {
+                            "name": "ModifiedDate",
+                            "type": "Datetime"
+                        }
+                    ],
+                    "published": false,
+                    "type": "AzureSqlTable",
+                    "linkedServiceName": "ADSWorkshop-AzureSQLDBConnection",
+                    "typeProperties": {
+                        "tableName": "[SalesLT].[Customer]"
+                    },
+                    "availability": {
+                        "frequency": "Day",
+                        "interval": 1
+                    },
+                    "external": true,
+                    "policy": {}
+                }
+            },
+            {
+                "name": "InputDatasets-jez-[SalesLT]-[CustomerAddress]",
+                "properties": {
+                    "structure": [
+                        {
+                            "name": "CustomerID",
+                            "type": "Int32"
+                        },
+                        {
+                            "name": "AddressID",
+                            "type": "Int32"
+                        },
+                        {
+                            "name": "AddressType",
+                            "type": "String"
+                        },
+                        {
+                            "name": "rowguid",
+                            "type": "Guid"
+                        },
+                        {
+                            "name": "ModifiedDate",
+                            "type": "Datetime"
+                        }
+                    ],
+                    "published": false,
+                    "type": "AzureSqlTable",
+                    "linkedServiceName": "ADSWorkshop-AzureSQLDBConnection",
+                    "typeProperties": {
+                        "tableName": "[SalesLT].[CustomerAddress]"
+                    },
+                    "availability": {
+                        "frequency": "Day",
+                        "interval": 1
+                    },
+                    "external": true,
+                    "policy": {}
+                }
+            },
+            {
+                "name": "InputDatasets-jez-[SalesLT]-[ProductCategory]",
+                "properties": {
+                    "structure": [
+                        {
+                            "name": "ProductCategoryID",
+                            "type": "Int32"
+                        },
+                        {
+                            "name": "ParentProductCategoryID",
+                            "type": "Int32"
+                        },
+                        {
+                            "name": "Name",
+                            "type": "String"
+                        },
+                        {
+                            "name": "rowguid",
+                            "type": "Guid"
+                        },
+                        {
+                            "name": "ModifiedDate",
+                            "type": "Datetime"
+                        }
+                    ],
+                    "published": false,
+                    "type": "AzureSqlTable",
+                    "linkedServiceName": "ADSWorkshop-AzureSQLDBConnection",
+                    "typeProperties": {
+                        "tableName": "[SalesLT].[ProductCategory]"
+                    },
+                    "availability": {
+                        "frequency": "Day",
+                        "interval": 1
+                    },
+                    "external": true,
+                    "policy": {}
+                }
+            },
+            {
+                "name": "InputDatasets-jez-[SalesLT]-[SalesOrderDetail]",
+                "properties": {
+                    "structure": [
+                        {
+                            "name": "SalesOrderID",
+                            "type": "Int32"
+                        },
+                        {
+                            "name": "SalesOrderDetailID",
+                            "type": "Int32"
+                        },
+                        {
+                            "name": "OrderQty",
+                            "type": "Int16"
+                        },
+                        {
+                            "name": "ProductID",
+                            "type": "Int32"
+                        },
+                        {
+                            "name": "UnitPrice",
+                            "type": "Decimal"
+                        },
+                        {
+                            "name": "UnitPriceDiscount",
+                            "type": "Decimal"
+                        },
+                        {
+                            "name": "LineTotal",
+                            "type": "Decimal"
+                        },
+                        {
+                            "name": "rowguid",
+                            "type": "Guid"
+                        },
+                        {
+                            "name": "ModifiedDate",
+                            "type": "Datetime"
+                        }
+                    ],
+                    "published": false,
+                    "type": "AzureSqlTable",
+                    "linkedServiceName": "ADSWorkshop-AzureSQLDBConnection",
+                    "typeProperties": {
+                        "tableName": "[SalesLT].[SalesOrderDetail]"
+                    },
+                    "availability": {
+                        "frequency": "Day",
+                        "interval": 1
+                    },
+                    "external": true,
+                    "policy": {}
+                }
+            },
+            {
+                "name": "InputDatasets-jez-[SalesLT]-[SalesOrderHeader]",
+                "properties": {
+                    "structure": [
+                        {
+                            "name": "SalesOrderID",
+                            "type": "Int32"
+                        },
+                        {
+                            "name": "RevisionNumber",
+                            "type": "Int16"
+                        },
+                        {
+                            "name": "OrderDate",
+                            "type": "Datetime"
+                        },
+                        {
+                            "name": "DueDate",
+                            "type": "Datetime"
+                        },
+                        {
+                            "name": "ShipDate",
+                            "type": "Datetime"
+                        },
+                        {
+                            "name": "Status",
+                            "type": "Int16"
+                        },
+                        {
+                            "name": "OnlineOrderFlag",
+                            "type": "Boolean"
+                        },
+                        {
+                            "name": "SalesOrderNumber",
+                            "type": "String"
+                        },
+                        {
+                            "name": "PurchaseOrderNumber",
+                            "type": "String"
+                        },
+                        {
+                            "name": "AccountNumber",
+                            "type": "String"
+                        },
+                        {
+                            "name": "CustomerID",
+                            "type": "Int32"
+                        },
+                        {
+                            "name": "ShipToAddressID",
+                            "type": "Int32"
+                        },
+                        {
+                            "name": "BillToAddressID",
+                            "type": "Int32"
+                        },
+                        {
+                            "name": "ShipMethod",
+                            "type": "String"
+                        },
+                        {
+                            "name": "CreditCardApprovalCode",
+                            "type": "String"
+                        },
+                        {
+                            "name": "SubTotal",
+                            "type": "Decimal"
+                        },
+                        {
+                            "name": "TaxAmt",
+                            "type": "Decimal"
+                        },
+                        {
+                            "name": "Freight",
+                            "type": "Decimal"
+                        },
+                        {
+                            "name": "TotalDue",
+                            "type": "Decimal"
+                        },
+                        {
+                            "name": "Comment",
+                            "type": "String"
+                        },
+                        {
+                            "name": "rowguid",
+                            "type": "Guid"
+                        },
+                        {
+                            "name": "ModifiedDate",
+                            "type": "Datetime"
+                        }
+                    ],
+                    "published": false,
+                    "type": "AzureSqlTable",
+                    "linkedServiceName": "ADSWorkshop-AzureSQLDBConnection",
+                    "typeProperties": {
+                        "tableName": "[SalesLT].[SalesOrderHeader]"
+                    },
+                    "availability": {
+                        "frequency": "Day",
+                        "interval": 1
+                    },
+                    "external": true,
+                    "policy": {}
+                }
+            },
+            {
+                "name": "OutputDatasets-jez-[SalesLT]-[Address]",
+                "properties": {
+                    "structure": [
+                        {
+                            "name": "AddressID",
+                            "type": "Int32"
+                        },
+                        {
+                            "name": "AddressLine1",
+                            "type": "String"
+                        },
+                        {
+                            "name": "AddressLine2",
+                            "type": "String"
+                        },
+                        {
+                            "name": "City",
+                            "type": "String"
+                        },
+                        {
+                            "name": "StateProvince",
+                            "type": "String"
+                        },
+                        {
+                            "name": "CountryRegion",
+                            "type": "String"
+                        },
+                        {
+                            "name": "PostalCode",
+                            "type": "String"
+                        },
+                        {
+                            "name": "rowguid",
+                            "type": "Guid"
+                        },
+                        {
+                            "name": "ModifiedDate",
+                            "type": "Datetime"
+                        }
+                    ],
+                    "published": false,
+                    "type": "AzureDataLakeStore",
+                    "linkedServiceName": "ADSWorkshop-AzureDataLakeStoreConnection",
+                    "typeProperties": {
+                        "fileName": "Address.txt",
+                        "folderPath": "Raw/AWSQLDB/",
+                        "format": {
+                            "type": "TextFormat",
+                            "columnDelimiter": "|",
+                            "firstRowAsHeader": true
+                        }
+                    },
+                    "availability": {
+                        "frequency": "Day",
+                        "interval": 1
+                    },
+                    "external": false,
+                    "policy": {}
+                }
+            },
+            {
+                "name": "OutputDatasets-jez-[SalesLT]-[Customer]",
+                "properties": {
+                    "structure": [
+                        {
+                            "name": "CustomerID",
+                            "type": "Int32"
+                        },
+                        {
+                            "name": "NameStyle",
+                            "type": "Boolean"
+                        },
+                        {
+                            "name": "Title",
+                            "type": "String"
+                        },
+                        {
+                            "name": "FirstName",
+                            "type": "String"
+                        },
+                        {
+                            "name": "MiddleName",
+                            "type": "String"
+                        },
+                        {
+                            "name": "LastName",
+                            "type": "String"
+                        },
+                        {
+                            "name": "Suffix",
+                            "type": "String"
+                        },
+                        {
+                            "name": "CompanyName",
+                            "type": "String"
+                        },
+                        {
+                            "name": "SalesPerson",
+                            "type": "String"
+                        },
+                        {
+                            "name": "EmailAddress",
+                            "type": "String"
+                        },
+                        {
+                            "name": "Phone",
+                            "type": "String"
+                        },
+                        {
+                            "name": "PasswordHash",
+                            "type": "String"
+                        },
+                        {
+                            "name": "PasswordSalt",
+                            "type": "String"
+                        },
+                        {
+                            "name": "rowguid",
+                            "type": "Guid"
+                        },
+                        {
+                            "name": "ModifiedDate",
+                            "type": "Datetime"
+                        }
+                    ],
+                    "published": false,
+                    "type": "AzureDataLakeStore",
+                    "linkedServiceName": "ADSWorkshop-AzureDataLakeStoreConnection",
+                    "typeProperties": {
+                        "fileName": "Customer.txt",
+                        "folderPath": "Raw/AWSQLDB/",
+                        "format": {
+                            "type": "TextFormat",
+                            "columnDelimiter": "|",
+                            "firstRowAsHeader": true
+                        }
+                    },
+                    "availability": {
+                        "frequency": "Day",
+                        "interval": 1
+                    },
+                    "external": false,
+                    "policy": {}
+                }
+            },
+            {
+                "name": "OutputDatasets-jez-[SalesLT]-[CustomerAddress]",
+                "properties": {
+                    "structure": [
+                        {
+                            "name": "CustomerID",
+                            "type": "Int32"
+                        },
+                        {
+                            "name": "AddressID",
+                            "type": "Int32"
+                        },
+                        {
+                            "name": "AddressType",
+                            "type": "String"
+                        },
+                        {
+                            "name": "rowguid",
+                            "type": "Guid"
+                        },
+                        {
+                            "name": "ModifiedDate",
+                            "type": "Datetime"
+                        }
+                    ],
+                    "published": false,
+                    "type": "AzureDataLakeStore",
+                    "linkedServiceName": "ADSWorkshop-AzureDataLakeStoreConnection",
+                    "typeProperties": {
+                        "fileName": "CustomerAddress.txt",
+                        "folderPath": "Raw/AWSQLDB/",
+                        "format": {
+                            "type": "TextFormat",
+                            "columnDelimiter": "|",
+                            "firstRowAsHeader": true
+                        }
+                    },
+                    "availability": {
+                        "frequency": "Day",
+                        "interval": 1
+                    },
+                    "external": false,
+                    "policy": {}
+                }
+            },
+            {
+                "name": "OutputDatasets-jez-[SalesLT]-[ProductCategory]",
+                "properties": {
+                    "structure": [
+                        {
+                            "name": "ProductCategoryID",
+                            "type": "Int32"
+                        },
+                        {
+                            "name": "ParentProductCategoryID",
+                            "type": "Int32"
+                        },
+                        {
+                            "name": "Name",
+                            "type": "String"
+                        },
+                        {
+                            "name": "rowguid",
+                            "type": "Guid"
+                        },
+                        {
+                            "name": "ModifiedDate",
+                            "type": "Datetime"
+                        }
+                    ],
+                    "published": false,
+                    "type": "AzureDataLakeStore",
+                    "linkedServiceName": "ADSWorkshop-AzureDataLakeStoreConnection",
+                    "typeProperties": {
+                        "fileName": "ProductCategory.txt",
+                        "folderPath": "Raw/AWSQLDB/",
+                        "format": {
+                            "type": "TextFormat",
+                            "columnDelimiter": "|",
+                            "firstRowAsHeader": true
+                        }
+                    },
+                    "availability": {
+                        "frequency": "Day",
+                        "interval": 1
+                    },
+                    "external": false,
+                    "policy": {}
+                }
+            },
+            {
+                "name": "OutputDatasets-jez-[SalesLT]-[SalesOrderDetail]",
+                "properties": {
+                    "structure": [
+                        {
+                            "name": "SalesOrderID",
+                            "type": "Int32"
+                        },
+                        {
+                            "name": "SalesOrderDetailID",
+                            "type": "Int32"
+                        },
+                        {
+                            "name": "OrderQty",
+                            "type": "Int16"
+                        },
+                        {
+                            "name": "ProductID",
+                            "type": "Int32"
+                        },
+                        {
+                            "name": "UnitPrice",
+                            "type": "Decimal"
+                        },
+                        {
+                            "name": "UnitPriceDiscount",
+                            "type": "Decimal"
+                        },
+                        {
+                            "name": "LineTotal",
+                            "type": "Decimal"
+                        },
+                        {
+                            "name": "rowguid",
+                            "type": "Guid"
+                        },
+                        {
+                            "name": "ModifiedDate",
+                            "type": "Datetime"
+                        }
+                    ],
+                    "published": false,
+                    "type": "AzureDataLakeStore",
+                    "linkedServiceName": "ADSWorkshop-AzureDataLakeStoreConnection",
+                    "typeProperties": {
+                        "fileName": "SalesOrderDetail.txt",
+                        "folderPath": "Raw/AWSQLDB/",
+                        "format": {
+                            "type": "TextFormat",
+                            "columnDelimiter": "|",
+                            "firstRowAsHeader": true
+                        }
+                    },
+                    "availability": {
+                        "frequency": "Day",
+                        "interval": 1
+                    },
+                    "external": false,
+                    "policy": {}
+                }
+            },
+            {
+                "name": "OutputDatasets-jez-[SalesLT]-[SalesOrderHeader]",
+                "properties": {
+                    "structure": [
+                        {
+                            "name": "SalesOrderID",
+                            "type": "Int32"
+                        },
+                        {
+                            "name": "RevisionNumber",
+                            "type": "Int16"
+                        },
+                        {
+                            "name": "OrderDate",
+                            "type": "Datetime"
+                        },
+                        {
+                            "name": "DueDate",
+                            "type": "Datetime"
+                        },
+                        {
+                            "name": "ShipDate",
+                            "type": "Datetime"
+                        },
+                        {
+                            "name": "Status",
+                            "type": "Int16"
+                        },
+                        {
+                            "name": "OnlineOrderFlag",
+                            "type": "Boolean"
+                        },
+                        {
+                            "name": "SalesOrderNumber",
+                            "type": "String"
+                        },
+                        {
+                            "name": "PurchaseOrderNumber",
+                            "type": "String"
+                        },
+                        {
+                            "name": "AccountNumber",
+                            "type": "String"
+                        },
+                        {
+                            "name": "CustomerID",
+                            "type": "Int32"
+                        },
+                        {
+                            "name": "ShipToAddressID",
+                            "type": "Int32"
+                        },
+                        {
+                            "name": "BillToAddressID",
+                            "type": "Int32"
+                        },
+                        {
+                            "name": "ShipMethod",
+                            "type": "String"
+                        },
+                        {
+                            "name": "CreditCardApprovalCode",
+                            "type": "String"
+                        },
+                        {
+                            "name": "SubTotal",
+                            "type": "Decimal"
+                        },
+                        {
+                            "name": "TaxAmt",
+                            "type": "Decimal"
+                        },
+                        {
+                            "name": "Freight",
+                            "type": "Decimal"
+                        },
+                        {
+                            "name": "TotalDue",
+                            "type": "Decimal"
+                        },
+                        {
+                            "name": "Comment",
+                            "type": "String"
+                        },
+                        {
+                            "name": "rowguid",
+                            "type": "Guid"
+                        },
+                        {
+                            "name": "ModifiedDate",
+                            "type": "Datetime"
+                        }
+                    ],
+                    "published": false,
+                    "type": "AzureDataLakeStore",
+                    "linkedServiceName": "ADSWorkshop-AzureDataLakeStoreConnection",
+                    "typeProperties": {
+                        "fileName": "SalesOrderHeader.txt",
+                        "folderPath": "Raw/AWSQLDB/",
+                        "format": {
+                            "type": "TextFormat",
+                            "columnDelimiter": "|",
+                            "firstRowAsHeader": true
+                        }
+                    },
+                    "availability": {
+                        "frequency": "Day",
+                        "interval": 1
+                    },
+                    "external": false,
+                    "policy": {}
+                }
+            }
+        ]
+    }
+}
